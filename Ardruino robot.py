@@ -1,17 +1,34 @@
+# forward == 12
+# stop == 10
+# backward == 8
+# left value == left motor
+# right value == right motor
+
+f="12"
+s="10"
+b="08"
+
+
 def Forward():
-    return(100,100)
+    return f+f
+
+def PivotLeft():
+    return (f+b)
+
+def PivotRight():
+    return (b+f)
 
 def Left():
-    return (100,0)
-
+    return(f+s)
+    
 def Right():
-    return (0,100)
-
+    return(s+f)
+    
 def Stop():
-    return(50,50)
+    return(s+s)
 
 def Backward():
-    return(0,0)
+    return(b+b)
 
 def Dist(time):
     speed = 343
@@ -20,10 +37,8 @@ def Dist(time):
     if distance < mindist:
         Stop()
         
-    
-output = []
+# 
+Motor = PivotRight()
 
-output = Forward()
+print(Motor)
 
-
-print(output)
