@@ -1,12 +1,12 @@
-# forward == 12
-# stop == 10
-# backward == 8
+# forward == 3
+# stop == 2
+# backward == 1
 # left value == left motor
 # right value == right motor
 
-f="12"
-s="10"
-b="08"
+f="3"
+s="2"
+b="1"
 
 
 def Forward():
