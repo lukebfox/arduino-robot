@@ -36,13 +36,24 @@ void setup() {
   pinMode(IN_23, OUTPUT);
   pinMode(IN_24, OUTPUT);
 } 
+void off(){
+  digitalWrite(IN_11, LOW);
+  digitalWrite(IN_12, LOW);
+  digitalWrite(IN_13, LOW);
+  digitalWrite(IN_14, LOW);
+  digitalWrite(IN_21, LOW);
+  digitalWrite(IN_22, LOW);
+  digitalWrite(IN_23, LOW);
+  digitalWrite(IN_24, LOW);
+}
 void goAhead(){ 
   StepsRequired  =  STEPS_PER_OUT_REV / 2; 
   steppermotorL.setSpeed(100);   
-  steppermotorL.step(StepsRequired);
   steppermotorR.setSpeed(100);   
   steppermotorR.step(-StepsRequired);
+  steppermotorL.step(StepsRequired);
   delay(1000);
+  off();
 }
 void goBack(){ 
   StepsRequired  =  STEPS_PER_OUT_REV / 2; 
@@ -51,6 +62,7 @@ void goBack(){
   steppermotorR.setSpeed(100);   
   steppermotorR.step(StepsRequired);
   delay(1000);
+  off();
 }
 void goLeft(){
   StepsRequired  =  STEPS_PER_OUT_REV / 2; 
@@ -59,6 +71,7 @@ void goLeft(){
   steppermotorR.setSpeed(100);   
   steppermotorR.step(-StepsRequired);
   delay(1000);
+  off();
 }
 void goRight(){ 
   StepsRequired  =  STEPS_PER_OUT_REV / 2; 
@@ -67,6 +80,7 @@ void goRight(){
   steppermotorR.setSpeed(100);   
   steppermotorR.step(StepsRequired);
   delay(1000);
+  off();
 }
 void goAheadLeft(){
   StepsRequired  =  STEPS_PER_OUT_REV / 2; 
@@ -74,6 +88,7 @@ void goAheadLeft(){
   steppermotorR.setSpeed(100);   
   steppermotorR.step(-StepsRequired);
   delay(1000);
+  off();
 }
 void goAheadRight(){
   StepsRequired  =  STEPS_PER_OUT_REV / 2; 
@@ -81,6 +96,7 @@ void goAheadRight(){
   steppermotorL.step(StepsRequired);
   steppermotorR.setSpeed(0);   
   delay(1000);
+  off();
 }
 void goBackLeft(){ 
   StepsRequired  =  STEPS_PER_OUT_REV / 2; 
@@ -89,6 +105,7 @@ void goBackLeft(){
   steppermotorR.setSpeed(100);   
   steppermotorR.step(-StepsRequired);
   delay(1000);
+  off();
 }
 void goBackRight(){ 
   StepsRequired  =  STEPS_PER_OUT_REV / 2; 
@@ -96,10 +113,10 @@ void goBackRight(){
   steppermotorR.setSpeed(100);   
   steppermotorR.step(StepsRequired);
   delay(1000);
+  off();
 }
 void stopRobot(){  
-  steppermotorL.setSpeed(0);   
-  steppermotorR.setSpeed(0);   
+  off();
   delay(1000);
 }
   
@@ -116,7 +133,8 @@ void loop(){
       case '6' :goAheadRight();break;
       case '7' :goBackLeft();break;
       case '8' :goBackRight();break;
-      case '9' :stopRobot();break;      
+      case '9' :stopRobot();break;
+        //default:digitalWrite(2,HIGH);break;      
     }
   }
 }
