@@ -1,4 +1,4 @@
-//returns the string that is hopefully recieved by the arduino
+#returns the string that is hopefully recieved by the arduino
 def Forward():
     return "1111"
 
@@ -26,7 +26,7 @@ def Stop():
 def Backward():
     return "0101"
 
-//can we move this to the arduino?
+#can we move this to the arduino?
 def Dist(time):
     speed = 343
     distance = speed * time
@@ -34,8 +34,7 @@ def Dist(time):
     if distance < mindist:
         Stop()
         
-//testing code
-
-Motor = PivotRight()
-print(Motor)
+#testing code
+command = PivotRight()
+print(command)
 
