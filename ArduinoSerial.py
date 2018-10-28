@@ -1,7 +1,7 @@
 import serial
-from ArdruinoRobot import Forward
+from Arduino_Robot import Forward
 
-#income = Forward()
+message = Forward()
 #income = str.encode(income)
 #arduinoData = serial.Serial("com3", 9600)
 #arduinoData.write(income)
@@ -12,5 +12,5 @@ while True:
     print (ser.name)
     ser.baudrate = 9600
     
-    ser.write(5)
+    ser.write(message)
     ser.close()
