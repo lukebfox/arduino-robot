@@ -133,8 +133,7 @@ void loop(){
       case '6' :goAheadRight();break;
       case '7' :goBackLeft();break;
       case '8' :goBackRight();break;
-      case '9' :stopRobot();break;
-        //default:digitalWrite(2,HIGH);break;      
+      case '9' :stopRobot();break;   
     }
   }
 }
