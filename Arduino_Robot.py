@@ -1,28 +1,28 @@
 #returns the string that is hopefully recieved by the arduino
 def Forward():
-    return (b'1212')
-
-def PivotLeft():
-    return (b'1121')
-
-def PivotRight():
-    return (b'2111')
-
-def FLeft():
-    return (b'1211')
-    
-def FRight():
-    return (b'1112')
-    
-def BLeft():
-    return (b'1221')
-    
-def BRight():
-    return (b'2112')
-    
-def Stop():
-    return (b'1212')
+    return (b'1')
 
 def Backward():
-    return (b'2121')
+    return (b'2')
       
+def PivotLeft():
+    return (b'3')
+
+def PivotRight():
+    return (b'4')
+
+def FLeft():
+    return (b'5')
+    
+def FRight():
+    return (b'6')
+    
+def BLeft():
+    return (b'7')
+    
+def BRight():
+    return (b'8')
+    
+def Stop():
+    return (b'9')
+
