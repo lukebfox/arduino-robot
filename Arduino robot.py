@@ -1,35 +1,32 @@
-# forward == 3
-# stop == 2
-# backward == 1
-# left value == left motor
-# right value == right motor
-
-f="3"
-s="2"
-b="1"
-
-
+//returns the string that is hopefully recieved by the arduino
 def Forward():
-    return f+f
+    return "1111"
 
 def PivotLeft():
-    return (f+b)
+    return "1101"
 
 def PivotRight():
-    return (b+f)
+    return "0111"
 
-def Left():
-    return(f+s)
+def FLeft():
+    return "1011"
     
-def Right():
-    return(s+f)
+def FRight():
+    return "1110"
+    
+def BLeft():
+    return "1001"
+    
+def BRight():
+    return "0110"
     
 def Stop():
-    return(s+s)
+    return "1010"
 
 def Backward():
-    return(b+b)
+    return "0101"
 
+//can we move this to the arduino?
 def Dist(time):
     speed = 343
     distance = speed * time
@@ -37,8 +34,8 @@ def Dist(time):
     if distance < mindist:
         Stop()
         
-# 
-Motor = PivotRight()
+//testing code
 
+Motor = PivotRight()
 print(Motor)
 
