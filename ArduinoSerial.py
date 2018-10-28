@@ -1,16 +1,11 @@
 import serial
 from Arduino_Robot import Forward
 
-message = Forward()
-#income = str.encode(income)
-#arduinoData = serial.Serial("com3", 9600)
-#arduinoData.write(income)
-#print(income)
-#arduinoData.close()
-while True:
-    ser = serial.Serial("com3")
-    print (ser.name)
-    ser.baudrate = 9600
+ser = ser.Serial("com3", 9600, timeout=5)
+
+def send_message(code):
+    sleep(1)
+    ser.write(code)
+
     
-    ser.write(message)
-    ser.close()
+

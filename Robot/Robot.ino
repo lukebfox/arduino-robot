@@ -26,6 +26,7 @@ Stepper steppermotorR(STEPS_PER_REV, 4, 5, 6, 7);
 
 void setup() {  
   Serial.begin(9600); 
+  pinMode(2, OUTPUT);
   pinMode(IN_11, OUTPUT);
   pinMode(IN_12, OUTPUT);
   pinMode(IN_13, OUTPUT);
@@ -105,16 +106,17 @@ void stopRobot(){
 void loop(){  
   if (Serial.available() > 0) {
     command = Serial.read();
+    
     switch (command) {
-      case 1111 :goAhead();break;
-      case 0101 :goBack();break;
-      case 1101 :goLeft();break;
-      case 0111 :goRight();break;
-      case 1011 :goAheadLeft();break;
-      case 1110 :goAheadRight();break;
-      case 1001 :goBackLeft();break;
-      case 0110 :goBackRight();break;
-      case 1010 :stopRobot();break;      
+      case '1' :goAhead();break;
+      case '2' :goBack();break;
+      case '3' :goLeft();break;
+      case '4' :goRight();break;
+      case '5' :goAheadLeft();break;
+      case '6' :goAheadRight();break;
+      case '7' :goBackLeft();break;
+      case '8' :goBackRight();break;
+      case '9' :stopRobot();break;      
     }
   }
 }
